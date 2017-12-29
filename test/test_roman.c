@@ -7,9 +7,12 @@ void test_vReturns5(void) { TEST_ASSERT_EQUAL_INT(5, roman_value("v")); }
 
 void test_xReturns10(void) { TEST_ASSERT_EQUAL_INT(10, roman_value("x")); }
 
+void test_iiReturns2(void) { TEST_ASSERT_EQUAL_INT(2, roman_value("ii")); }
+
 void roman_suite(void) {
     RUN_TEST(test_iReturns1);
     RUN_TEST(test_vReturns5);
     RUN_TEST(test_xReturns10);
+    RUN_TEST(test_iiReturns2);
     return;
 }
