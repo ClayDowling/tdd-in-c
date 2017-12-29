@@ -2,6 +2,9 @@
 
 int roman_value(const char *roman) {
     if ('i' == roman[1]) {
+        if ('v' == roman[0]) {
+            return 6;
+        }
         return 2;
     }
     switch (roman[0]) {
