@@ -14,9 +14,10 @@ static int roman_digit(const char digit) {
 }
 
 int roman_value(const char *roman) {
-    int value = roman_digit(roman[0]);
+    int d0 = roman_digit(roman[0]);
+    int d1 = 0;
     if (0 != roman[1]) {
-        value += roman_digit(roman[1]);
+        d1 = roman_digit(roman[1]);
     }
-    return value;
+    return d1 > d0 ? d1 - d0 : d0 + d1;
 }
