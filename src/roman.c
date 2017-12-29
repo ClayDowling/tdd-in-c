@@ -1,13 +1,7 @@
 #include "roman.h"
 
-int roman_value(const char *roman) {
-    if ('i' == roman[1]) {
-        if ('v' == roman[0]) {
-            return 6;
-        }
-        return 2;
-    }
-    switch (roman[0]) {
+static int roman_digit(const char digit) {
+    switch (digit) {
         case 'i':
             return 1;
         case 'v':
@@ -17,4 +11,12 @@ int roman_value(const char *roman) {
         default:
             return -1;
     }
+}
+
+int roman_value(const char *roman) {
+    int value = roman_digit(roman[0]);
+    if (0 != roman[1]) {
+        value += roman_digit(roman[1]);
+    }
+    return value;
 }
