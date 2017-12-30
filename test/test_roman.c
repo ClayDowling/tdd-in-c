@@ -13,6 +13,8 @@ void test_viReturns6(void) { TEST_ASSERT_EQUAL_INT(6, roman_value("vi")); }
 
 void test_ivReturns4(void) { TEST_ASSERT_EQUAL_INT(4, roman_value("iv")); }
 
+void test_iiiReturns3(void) { TEST_ASSERT_EQUAL_INT(3, roman_value("iii")); }
+
 void roman_suite(void) {
     RUN_TEST(test_iReturns1);
     RUN_TEST(test_vReturns5);
@@ -20,5 +22,6 @@ void roman_suite(void) {
     RUN_TEST(test_iiReturns2);
     RUN_TEST(test_viReturns6);
     RUN_TEST(test_ivReturns4);
+    RUN_TEST(test_iiiReturns3);
     return;
 }
