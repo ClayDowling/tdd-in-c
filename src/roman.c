@@ -1,7 +1,8 @@
 #include "roman.h"
+#include <ctype.h>
 
 static int roman_digit(const char digit) {
-    switch (digit) {
+    switch (tolower(digit)) {
         case 'i':
             return 1;
         case 'v':

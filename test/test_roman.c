@@ -23,6 +23,16 @@ void test_ivReturns4(void) { TEST_ASSERT_EQUAL_INT(4, roman_value("iv")); }
 
 void test_iiiReturns3(void) { TEST_ASSERT_EQUAL_INT(3, roman_value("iii")); }
 
+void test_converstionIsCaseInsensitive(void) {
+    TEST_ASSERT_EQUAL_INT(1, roman_value("I"));
+    TEST_ASSERT_EQUAL_INT(5, roman_value("V"));
+    TEST_ASSERT_EQUAL_INT(10, roman_value("X"));
+    TEST_ASSERT_EQUAL_INT(50, roman_value("L"));
+    TEST_ASSERT_EQUAL_INT(100, roman_value("C"));
+    TEST_ASSERT_EQUAL_INT(500, roman_value("D"));
+    TEST_ASSERT_EQUAL_INT(1000, roman_value("M"));
+}
+
 void roman_suite(void) {
     RUN_TEST(test_iReturns1);
     RUN_TEST(test_vReturns5);
@@ -35,5 +45,6 @@ void roman_suite(void) {
     RUN_TEST(test_viReturns6);
     RUN_TEST(test_ivReturns4);
     RUN_TEST(test_iiiReturns3);
+    RUN_TEST(test_converstionIsCaseInsensitive);
     return;
 }
